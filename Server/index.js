@@ -29,10 +29,10 @@ async function run() {
     });
 
     // GET all books from database
-    app.get("/all-books", async (req, res) => {
+    /*app.get("/all-books", async (req, res) => {
       const books = await bookCollection.find().toArray(); // Await the find operation and convert to array
       res.send(books);
-    });
+    });*/
 
     // Update a book data; patch or update methods
     app.patch("/book/:id", async (req, res) => {
@@ -49,6 +49,28 @@ async function run() {
       const result = await bookCollection.updateOne(filter, updateDoc, options);
       res.send(result);
     });
+
+    // delete a book data
+    app.delete("/book/:id", async(req, res) =>{
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const result =await bookCollection.deleteOne(filter);
+      res.send(result);
+    });
+
+
+
+    //find by category
+    app.get("/all-books", async (req, res) =>{
+      let query ={};
+      if(req.query?.category){
+        query = {category: req.query.category}
+      }
+      const result = await bookCollection.find(query).toArray();
+      res.send(result);
+
+    });
+
 
     // Start the Express server
     app.listen(port, () => {
