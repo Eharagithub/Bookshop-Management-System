@@ -1,4 +1,5 @@
 import React from 'react'
+import BannerCard from '../home/BannerCard'
 
 const Banner = () => {
   return (
@@ -16,7 +17,9 @@ const Banner = () => {
         </div>
 
         {/*right side*/}
-        <div>Right</div>
+        <div className='w-1/2'>
+            <BannerCard/>
+        </div>
     </div>
     </div>
   
