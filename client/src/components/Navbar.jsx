@@ -49,7 +49,7 @@ const Navbar = () => {
                 paddingBottom: '1rem',
                 paddingLeft: '1rem',
                 paddingRight: '1rem',
-                '@media (min-width: 1024px)': {
+                '@media (minWidth: 1024px)': {
                     paddingLeft: '6rem',
                     paddingRight: '6rem'
                 },
@@ -60,7 +60,7 @@ const Navbar = () => {
 
                     {/*logo*/}
                     <Link to="/" style={{ fontSize: '2rem', fontWeight: 'bold', color: 'blue', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <FaBlog style={{ display: 'inline-block' }} />Books
+                        <img src={"https://assets.localretailconnect.com/rw-assets/northlandbookstore.com/17703/logo.png"} style={{ display: 'inline-block ',width: '150px', height: 'auto' }} />
                     </Link>
 
                     {/* nav item for large devices*/}
