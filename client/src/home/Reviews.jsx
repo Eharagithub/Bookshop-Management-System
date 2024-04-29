@@ -3,7 +3,9 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 //react icons
-import {FaStar} from "react-icons/fa6"
+import { FaStar } from "react-icons/fa6"
+import { Avatar } from "flowbite-react";
+import proPic from "../assets/profile.jpg";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -43,29 +45,114 @@ const Reviews = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    <SwiperSlide>
-                        <div>
+                    <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='space-y-6'>
                             <div className='text-amber-500 flex gap-2'>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
                             </div>
 
                             {/* text*/}
-                            <div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                            <div className='mt-7'>
+                                <p className='mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mb-4'/>
+                                <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                <p className='text-base'>CEO, ABC Company</p>
                             </div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
-                    <SwiperSlide>Slide 7</SwiperSlide>
-                    <SwiperSlide>Slide 8</SwiperSlide>
-                    <SwiperSlide>Slide 9</SwiperSlide>
+                    <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='space-y-6'>
+                            <div className='text-amber-500 flex gap-2'>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+
+                            {/* text*/}
+                            <div className='mt-7'>
+                                <p className='mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mb-4'/>
+                                <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                <p className='text-base'>CEO, ABC Company</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='space-y-6'>
+                            <div className='text-amber-500 flex gap-2'>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+
+                            {/* text*/}
+                            <div className='mt-7'>
+                                <p className='mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mb-4'/>
+                                <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                <p className='text-base'>CEO, ABC Company</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='space-y-6'>
+                            <div className='text-amber-500 flex gap-2'>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+
+                            {/* text*/}
+                            <div className='mt-7'>
+                                <p className='mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mb-4'/>
+                                <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                <p className='text-base'>CEO, ABC Company</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='space-y-6'>
+                            <div className='text-amber-500 flex gap-2'>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+
+                            {/* text*/}
+                            <div className='mt-7'>
+                                <p className='mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mb-4'/>
+                                <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                <p className='text-base'>CEO, ABC Company</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border'>
+                        <div className='space-y-6'>
+                            <div className='text-amber-500 flex gap-2'>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+
+                            {/* text*/}
+                            <div className='mt-7'>
+                                <p className='mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit labore, aspernatur, veniam delectus omnis quis enim officia quibusdam eum modi quod a reprehenderit illum soluta laboriosam rem hic quam voluptatum.</p>
+                                <Avatar img={proPic} alt="avatar of Jese" rounded className='w-10 mb-4'/>
+                                <h5 className='text-lg font-medium'>Mark Ping</h5>
+                                <p className='text-base'>CEO, ABC Company</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </div>
