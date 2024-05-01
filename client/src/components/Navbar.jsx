@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 //react icons
 import { FaBarsStaggered, FaBlog, FaXmark } from "react-icons/fa6";
+import { AuthContext } from '../contects/AuthProviderr';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+
+    const {user} = useContext(AuthContext);
+    console.log(user);
 
     //toggle menu
     const toggleMenu = () => {
@@ -86,6 +90,9 @@ const Navbar = () => {
                                 onMouseOver={(e) => e.target.style.color = '#007bff'}
                                 onMouseOut={(e) => e.target.style.color = 'black'} />
                         </button>
+                        {/* {
+                            user? user.email : " "
+                        } */}
                     </div>
 
                     {/* menu btn for the mobile devices

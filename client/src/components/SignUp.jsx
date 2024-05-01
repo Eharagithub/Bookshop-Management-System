@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../contects/AuthProviderr';
+import googleLogo from '../assets/google-logo.svg'
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext);
+    const { createUser,loginwithGoogle } = useContext(AuthContext);
     const [error, serError] = useState("error");
 
     const location = useLocation();
-    const navigate =  useNavigate();
+    const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
 
@@ -17,19 +18,34 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        createUser(email,password).then((userCredential) => {
+        createUser(email, password).then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
             alert("Sign up successfully!")
-            navigate(from,{replace:true})
+            navigate(from, { replace: true })
             // ...
-          })
-          .catch((error) => {
+        })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                serError(errorMessage)
+            });
+
+    }
+
+    //sign up using google accounts
+    const handleRegister = () =>{
+        loginwithGoogle().then((result) =>{
+            const user = result.user;
+            alert("Sign up successfully!")
+            navigate(from, { replace: true })
+            // ...
+        })
+        .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             serError(errorMessage)
-          });
-
+        });
     }
 
     return (
@@ -53,15 +69,21 @@ const SignUp = () => {
                                     <input id="password" name="password" type="password" className="peer h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
                                 </div>
                                 <div>
-                                <p>If you have an account, Please <Link to="/login" className='text-blue-600 underline'>Login</Link>Here</p>
+                                    <p>If you have an account, Please <Link to="/login" className='text-blue-600 underline'>Login</Link>Here</p>
                                 </div>
                                 <div className="relative">
                                     <button className="bg-blue-500 text-white rounded-md px-6 py-2">Sign Up</button>
+                                </div>
+                                <hr />
+                                <div>
+                                    <button onClick={handleRegister} className='block'><img src={googleLogo} alt="" className='w-12 h-12 inline-block' />Login with Google</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+
+
             </div>
         </div>
     )
