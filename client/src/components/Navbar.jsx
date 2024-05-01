@@ -90,9 +90,9 @@ const Navbar = () => {
                                 onMouseOver={(e) => e.target.style.color = '#007bff'}
                                 onMouseOut={(e) => e.target.style.color = 'black'} />
                         </button>
-                        {/* {
+                        {
                             user? user.email : " "
-                        } */}
+                        }
                     </div>
 
                     {/* menu btn for the mobile devices
