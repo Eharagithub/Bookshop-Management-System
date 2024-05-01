@@ -3,9 +3,20 @@ import { Table } from "flowbite-react";
 
 const ManageBook = () => {
   const [allBooks, setAllBooks] = useState([]);
-  useEffect(() =>{
+  useEffect( () =>{
     fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => setAllBooks(data));
-  },[])
+  },  [])
+
+  // Delete a book
+  const handleDelete =  (id) =>{
+    console.log(id);
+    fetch(`http://localhost:5000/book/${id}`, {
+      method: "DELETE",
+    }).then(res => res.json()).then(data => {
+      alert("Book is deleted successfully!")
+      //setAllBooks(data);
+    })
+  }
 
   return (
     <div className='px-4 my-12'>
@@ -24,64 +35,39 @@ const ManageBook = () => {
             <span>Edit or Manage</span>
           </Table.HeadCell>
         </Table.Head>
-        
-        <Table.Body className="divide-y">
-
-          {/*table row 1 */}
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+        {
+          allBooks.map((book, index) =>  <Table.Body className="divide-y" key={book._id}>
+            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
           <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'01'}
+              {index + 1}
             </Table.Cell>
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'Apple MacBook Pro 17"'}
+              {book.bookTitle}
             </Table.Cell>
-            <Table.Cell>Sliver</Table.Cell>
-            <Table.Cell>Laptop</Table.Cell>
-            <Table.Cell>$2999</Table.Cell>
+            <Table.Cell>{book.authorName}</Table.Cell>
+            <Table.Cell>{book.category}</Table.Cell>
+            <Table.Cell>$100</Table.Cell>
             <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5">
-                Edit
-              </a>
-              <button onClick={() => handDelete(book._id)} className='bg-red-600 px-5 py-1 font-semibold text-white rounded-sm hover:bg-sky-600'>Delete</button>
+            <a href={`/admin/dashboard/edit-book/${book._id}`}
+              className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
+            >
+              <p>Edit</p>
+            </a>
+            <div>
+                  <button
+                    onClick={() => handleDelete(book._id)}
+                    className='bg-blue-600 px-3 font-medium text-black rounded-sm hover:bg-slate-600 mr-5'
+                  >
+                    Delete
+                  </button>
+                </div>
             </Table.Cell>
           </Table.Row>
 
-          {/*table row 2 */}
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-          <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'02'}
-            </Table.Cell>
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              Microsoft Surface Pro
-            </Table.Cell>
-            <Table.Cell>White</Table.Cell>
-            <Table.Cell>Laptop PC</Table.Cell>
-            <Table.Cell>$1999</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-
-          {/*table row 3 */}
-          <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-          <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-              {'03'}
-            </Table.Cell>
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">Magic Mouse 2</Table.Cell>
-            <Table.Cell>Black</Table.Cell>
-            <Table.Cell>Accessories</Table.Cell>
-            <Table.Cell>$99</Table.Cell>
-            <Table.Cell>
-              <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                Edit
-              </a>
-            </Table.Cell>
-          </Table.Row>
-          
-
-        </Table.Body>
+          </Table.Body>)
+        }
+         
+       
       </Table>
     </div>
   )
