@@ -4,7 +4,7 @@ import { Table } from "flowbite-react";
 const ManageBook = () => {
   const [allBooks, setAllBooks] = useState([]);
   useEffect(() =>{
-    fetch(" ").then(res => res.json()).then(data => setAllBooks(data))
+    fetch("http://localhost:5000/all-books").then(res => res.json()).then(data => setAllBooks(data));
   },[])
 
   return (
