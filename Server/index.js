@@ -24,7 +24,7 @@ async function run() {
       const data = req.body; // Assuming req.body is an array of book objects
       console.log(data); // Log the received data to check its format
 
-      const result = await bookCollection.insertMany(data); // Insert the received data into MongoDB
+      const result = await bookCollection.insertOne(data); // Insert the received data into MongoDB
       res.send(result);
     });
 
