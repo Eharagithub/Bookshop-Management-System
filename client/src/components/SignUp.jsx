@@ -58,7 +58,7 @@ const SignUp = () => {
                 <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
                     <div className="max-w-md mx-auto">
                         <div>
-                            <h1 className="text-2xl font-semibold">Login Form</h1>
+                            <h1 className="text-2xl font-semibold">Sign Up Here</h1>
                         </div>
                         <form onSubmit={handleSignUp} className="divide-y divide-gray-200">
                             <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">

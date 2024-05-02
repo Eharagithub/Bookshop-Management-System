@@ -24,13 +24,10 @@ const BarSide = () => {
                     <Sidebar.Item href="/admin/dashboard/edit-book/:id" icon={HiBookmarkAlt}>
                         Edit Book
                     </Sidebar.Item>
-                    <Sidebar.Item href="#" icon={HiShoppingBag}>
-                        Products
-                    </Sidebar.Item>
                     <Sidebar.Item href="/login" icon={HiArrowSmRight}>
                         Sign In
                     </Sidebar.Item>
-                    <Sidebar.Item href="logout" icon={HiTable}>
+                    <Sidebar.Item href="/logout" icon={HiTable}>
                         Log Out
                     </Sidebar.Item>
                 </Sidebar.ItemGroup>
