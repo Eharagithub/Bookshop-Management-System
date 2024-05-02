@@ -31,7 +31,7 @@ const BarSide = () => {
                         Log Out
                     </Sidebar.Item>
                 </Sidebar.ItemGroup>
-                <Sidebar.ItemGroup>
+                {/* <Sidebar.ItemGroup>
                     <Sidebar.Item href="#" icon={HiChartPie}>
                         Upgrade to Pro
                     </Sidebar.Item>
@@ -41,7 +41,7 @@ const BarSide = () => {
                     <Sidebar.Item href="#" icon={BiBuoy}>
                         Help
                     </Sidebar.Item>
-                </Sidebar.ItemGroup>
+                </Sidebar.ItemGroup> */}
             </Sidebar.Items>
         </Sidebar>
     )

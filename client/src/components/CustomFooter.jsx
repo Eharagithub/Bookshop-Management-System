@@ -16,11 +16,11 @@ const CustomFooter = () => {
                     />
 
                     <Footer.LinkGroup>
-                        <Footer.Link href="#">Home</Footer.Link>
-                        <Footer.Link href="#">About</Footer.Link>
-                        <Footer.Link href="#">Shop</Footer.Link>
-                        <Footer.Link href="#">Sell Your Book</Footer.Link>
-                        <Footer.Link href="#">Blog</Footer.Link>
+                        <Footer.Link href="/">Home</Footer.Link>
+                        <Footer.Link href="/about">About</Footer.Link>
+                        <Footer.Link href="/shop">Shop</Footer.Link>
+                        <Footer.Link href="login">Sell Your Book</Footer.Link>
+                        <Footer.Link href="/blog">Blog</Footer.Link>
                     </Footer.LinkGroup>
 
                     <Footer.LinkGroup>
