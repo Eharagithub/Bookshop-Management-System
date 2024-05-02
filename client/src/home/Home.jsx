@@ -14,7 +14,7 @@ const Home = () => {
       <BestSellerBooks/>
       <FavBook/>
       <PromoBanner/>
-      <OtherBooks/>
+      {/* <OtherBooks/> */}
       <Reviews/>
     </div>
   )
