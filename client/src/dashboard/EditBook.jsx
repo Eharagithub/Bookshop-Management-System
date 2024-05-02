@@ -16,7 +16,8 @@ const EditBook = () => {
     "Fantasy",
     "Horror",
     "Romance",
-    "Humor"
+    "Humor",
+    "Young Adult Fiction"
   ];
 
   const [selectedBookCategory, setSelectedBookCategory] = useState(bookCategories[0]);
