@@ -5,11 +5,14 @@ const UploadBook = () => {
   const bookCategories = [
     "Fiction",
     "Non-Fiction",
-    "Mystery",
-    "Programming",
+    "Historical & Biograhy",
+    "Mystery & Thriller",
+    "Fantasy",
     "Science Fiction",
     "Fantasy",
-    "Horror"
+    "Horror",
+    "Romance",
+    "Humor"
   ];
 
   const [selectedBookCategory, setSelectedBookCategory] = useState(bookCategories[0]);
@@ -36,6 +39,19 @@ const UploadBook = () => {
       const bookObj = {
         bookTitle, authorName, imageURL, category, bookDescription, bookPDFURL};
       console.log(bookObj);
+
+      //send data to db
+
+      fetch("http://localhost:5000/upload-book",{
+        method: "POST",
+        headers:  {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(bookObj)
+      }).then(res => res.json()).then(data => {
+        alert("Book uploaded successfully!")
+        form.reset();
+      })
 
     }
 
